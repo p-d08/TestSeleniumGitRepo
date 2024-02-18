@@ -33,6 +33,7 @@ public class PositiveTests {
 
 		// Close the Driver
 		System.out.println("Test Completed");
+		System.out.println("Test Completed 1");
 		driver.close();
 
 	}
