@@ -2,8 +2,10 @@ package com.herokuapp.theinternet;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 public class PositiveTests {
 	@Test
@@ -19,22 +21,39 @@ public class PositiveTests {
 		driver.get(url);
 		driver.manage().window().maximize();
 
-		// Enter Username
-		driver.findElement(By.id("username")).sendKeys("tomsmith");
+		// Enter User name
+		WebElement username = driver.findElement(By.id("username"));
+		username.sendKeys("tomsmith");
 
 		// Enter Password
-		driver.findElement(By.id("password")).sendKeys("uperSecretPassword!");
+		WebElement password = driver.findElement(By.id("password"));
+		password.sendKeys("SuperSecretPassword!");
 
 		// Click on Login Button
-		driver.findElement(By.tagName("button")).click();
+		WebElement logInBtn = driver.findElement(By.tagName("button"));
+		logInBtn.click();
 
-		// Verify Login test
-		System.out.println(driver.getTitle());
+		// Verifications:-
+
+		// new URL
+		String expectedUrl = "http://the-internet.herokuapp.com/secure";
+		String actualUrl = driver.getCurrentUrl();
+		Assert.assertEquals(actualUrl, expectedUrl, "Actual URL is not expected as Expected URL");
+
+		// Successful Login Message
+		WebElement Successmessage = driver.findElement(By.xpath("//div[@id='flash']"));
+		String expectedmsg = "You logged into a secure area!";
+		String actualmsg = Successmessage.getText();
+		Assert.assertTrue(actualmsg.contains(expectedmsg),
+				"Success message does not match.\nactualmsg: " + actualmsg + "\n Expected msg: " + expectedmsg);
+
+		// Logout Button is visible
+		WebElement logOutBtn = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
+		Assert.assertTrue(logOutBtn.isDisplayed(), "Log out button is not present");
 
 		// Close the Driver
 		System.out.println("Test Completed");
-		System.out.println("Test Completed 1");
-		driver.close();
+		driver.quit();
 
 	}
 
