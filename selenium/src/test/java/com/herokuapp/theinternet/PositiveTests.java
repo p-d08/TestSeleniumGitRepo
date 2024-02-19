@@ -45,7 +45,7 @@ public class PositiveTests {
 		String expectedmsg = "You logged into a secure area!";
 		String actualmsg = Successmessage.getText();
 		Assert.assertTrue(actualmsg.contains(expectedmsg),
-				"Success message does not match.\nactualmsg: " + actualmsg + "\n Expected msg: " + expectedmsg);
+				"Success message does not match.\nactualmsg:" + actualmsg + "\n Expected msg: " + expectedmsg);
 
 		// Logout Button is visible
 		WebElement logOutBtn = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
@@ -53,8 +53,7 @@ public class PositiveTests {
 
 		// Close the Driver
 		System.out.println("Test Completed");
-		driver.quit();
-
+		driver.close();
 	}
 
 }
