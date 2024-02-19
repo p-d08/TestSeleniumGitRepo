@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="NegativeTest" verbose="1">
+	<test name="NegativeTests">
+		<classes>
+			<parameter name="" value="">
+				<class name="com.herokuapp.theinternet.NegativeTests" />
+				<methods>
+					<include name="InvalidUsername" />
+					<!--<exclude name="InvalidPassword" />-->
+				</methods>
+			</parameter>
+		</classes>
+	</test>
+</suite>
