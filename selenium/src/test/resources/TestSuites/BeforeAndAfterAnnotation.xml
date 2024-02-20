@@ -4,46 +4,52 @@
 
 	<test name="positive">
 		<classes>
-			<class name="com.herokuapp.theinternet.BeforeAndAfterAnnotation" />
-			<methods>
-				<include name="Positive" />
-				<exclude name="Negative" />
-				<parameter name="browser" value="firefox" />
-				<parameter name="username" value="tomsmith" />
-				<parameter name="password" value="SuperSecretPassword!" />
-				<parameter name="expectedUrl"
-					value="http://the-internet.herokuapp.com/secure" />
-				<parameter name="expectedMessage"
-					value="You logged into a secure area!" />
-			</methods>
+			<parameter name="" value="">
+				<class name="com.herokuapp.theinternet.BeforeAndAfterAnnotation" />
+				<methods>
+					<include name="Positive" />
+					<exclude name="Negative" />
+					<parameter name="browser" value="firefox" />
+					<parameter name="username" value="tomsmith" />
+					<parameter name="password" value="SuperSecretPassword!" />
+					<parameter name="expectedUrl"
+						value="http://the-internet.herokuapp.com/secure" />
+					<parameter name="expectedMessage"
+						value="You logged into a secure area!" />
+				</methods>
+			</parameter>
 		</classes>
 	</test>
 	<test name="Negativeusername">
 		<classes>
-			<class name="com.herokuapp.theinternet.BeforeAndAfterAnnotation" />
-			<methods>
-				<include name="Negative" />
-				<exclude name="Positive" />
-				<parameter name="browser" value="chrome" />
-				<parameter name="username" value="toms" />
-				<parameter name="password" value="SuperSecretPassword!" />
-				<parameter name="expectedMessage"
-					value="Your username is invalid!" />
-			</methods>
+			<parameter name="" value="">
+				<class name="com.herokuapp.theinternet.BeforeAndAfterAnnotation" />
+				<methods>
+					<include name="Negative" />
+					<exclude name="Positive" />
+					<parameter name="browser" value="chrome" />
+					<parameter name="username" value="toms" />
+					<parameter name="password" value="SuperSecretPassword!" />
+					<parameter name="expectedMessage"
+						value="Your username is invalid!" />
+				</methods>
+			</parameter>
 		</classes>
 	</test>
 	<test name="Negativepassword">
 		<classes>
-			<class name="com.herokuapp.theinternet.BeforeAndAfterAnnotation" />
-			<methods>
-				<include name="Negative" />
-				<exclude name="Positive" />
-				<parameter name="browser" value="firefox" />
-				<parameter name="username" value="tomsmith" />
-				<parameter name="password" value="SuperSecretPassword" />
-				<parameter name="expectedMessage"
-					value="Your password is invalid!" />
-			</methods>
+			<parameter name="" value="">
+				<class name="com.herokuapp.theinternet.BeforeAndAfterAnnotation" />
+				<methods>
+					<include name="Negative" />
+					<exclude name="Positive" />
+					<parameter name="browser" value="firefox" />
+					<parameter name="username" value="tomsmith" />
+					<parameter name="password" value="SuperSecretPassword" />
+					<parameter name="expectedMessage"
+						value="Your password is invalid!" />
+				</methods>
+			</parameter>
 		</classes>
 	</test>
 </suite>
